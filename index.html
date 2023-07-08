@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Days Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .count {
+            font-size: 36px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Days Counter</h1>
+        <p>Counting the number of days since January 1, 2000:</p>
+        <div class="count" id="count"></div>
+    </div>
+
+    <script>
+        // Function to calculate the number of days since January 1, 2000
+        function calculateDays() {
+            var startDate = new Date('2000-01-01');
+            var currentDate = new Date();
+            var timeDiff = Math.abs(currentDate.getTime() - startDate.getTime());
+            var days = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+            document.getElementById('count').innerHTML = days;
+        }
+
+        // Call the calculateDays function when the page loads
+        calculateDays();
+    </script>
+</body>
+</html>
